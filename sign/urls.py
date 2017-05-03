@@ -19,5 +19,7 @@ from news.views import index
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index/',index),
-    url(r'^$',include('news.urls')),
+    url(r'^news/',include('news.urls')),
+    url(r'^$',index),
+    url(r'^news/',index),
 ]
