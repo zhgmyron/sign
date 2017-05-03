@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
     <title>Event Manage Page</title>
 </head>
-<body>
+<body role="document">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/news/event_mange/">Guest Manage System</a>
+        </div>
+
+
+    </nav>
     <div style="float:right;">
         <a>hello {{ user }} welcome!</a>
+        <a href='/logout/'>退出</a>
     </div>
     <h1>Login success!</h1>
 </body>

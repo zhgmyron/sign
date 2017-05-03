@@ -1,6 +1,7 @@
 from django.shortcuts import render,HttpResponseRedirect
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
+from news.models import Event
 # Create your views here.
 def index(request):
     return render(request,"sign/index.html")
@@ -20,5 +21,12 @@ def login_action(request):
 
 @login_required
 def event_manage(request):
+    event_list=Event.objects.all()
     username= request.session.get('user','')
-    return render(request,"sign/event_manage.html",{"user":username})
+    return render(request,"sign/event_manage.html",{"user":username,"events":event_list})
+
+@login_required
+def logout(request):
+    auth.logout(request)
+    response=HttpResponseRedirect('/index/')
+    return response
