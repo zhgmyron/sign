@@ -21,6 +21,5 @@ urlpatterns = [
     url(r'^index/',index),
     url(r'^news/',include('news.urls')),
     url(r'^$',index),
-    url(r'^news/',index),
-     url(r'^logout/$',index)
+    url(r'^logout/$',index)
 ]
