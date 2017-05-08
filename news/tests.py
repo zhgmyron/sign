@@ -109,12 +109,12 @@ class GuestManageTest(TestCase):
         self.assertIn(b"alen", response.content)
         self.assertIn(b"18611001100", response.content)
 
-    # def test_guest_mange_search_success(self):
-    #     ''' 测试嘉宾搜索 '''
-    #     response = self.client.post('/news/search_phone/',{"phone":"18611001100"})
-    #     self.assertEqual(response.status_code, 200)
-    #     self.assertIn(b"alen", response.content)
-    #     self.assertIn(b"18611001100", response.content)
+    def test_guest_mange_search_success(self):
+        ''' 测试嘉宾搜索 '''
+        response = self.client.post('/news/search_phone/',{"phone":"18611001100"})
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b"alen", response.content)
+        self.assertIn(b"18611001100", response.content)
 
 
 class SignIndexActionTest(TestCase):

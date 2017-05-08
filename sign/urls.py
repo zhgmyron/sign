@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^index/',index),
     url(r'^news/',include('news.urls')),
     url(r'^$',index),
-    url(r'^logout/$',index)
+    url(r'^logout/$',index),
+    url(r'^api/',include('news.apiurls',namespace="sign")),
 ]
