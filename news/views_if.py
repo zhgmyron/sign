@@ -1,8 +1,9 @@
 # -*- coding: UTF-8 -*-
 from django.http import JsonResponse
 from news.models import Event,Guest
-from django.core.exceptions import ValidationError
-
+from django.core.exceptions import ValidationError,ObjectDoesNotExist
+from django.db.utils import IntegrityError
+import time
 def add_event(request):
     eid = request.POST.get('eid','')                 # 发布会id
     name = request.POST.get('name','')               # 发布会标题
