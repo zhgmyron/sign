@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 from django.conf.urls import url
 from django.contrib import admin
-from news import views_if
+from news import views_if_sec,views_if
 urlpatterns = [
     url(r'^user_sign/',views_if.user_sign,name='user_sign'),
     url(r'^add_event/',views_if.add_event,name='add_event'),
